@@ -1,0 +1,152 @@
+M$Information = {
+Author -> "Zejian Zhuang",
+Version -> 1.0}
+
+
+
+M$ClassesDescription = {
+
+S[1] == {
+	ClassName -> pip,
+	SelfConjugate -> False,
+	Mass -> {mpip, 139.6},
+	Width -> 0
+	},
+
+(******************************)
+
+-S[1] == {
+	ClassName -> pim,
+	SelfConjugate -> False,
+	Mass -> {mpim, 139.6},
+	Width -> 0
+	},
+
+(******************************)
+
+S[2] == {
+	ClassName -> pi0,
+	SelfConjugate -> True,
+	Mass -> {mpi0, 135},
+	Width -> 0
+	},
+
+(******************************)
+
+S[3] == {
+	ClassName -> Kp,
+	SelfConjugate -> False,
+	Mass -> {mKp, 494},
+	Width -> 0
+	},
+
+(******************************)
+
+-S[3] == {
+	ClassName -> Km,
+	SelfConjugate -> False,
+	Mass -> {mKm, 494},
+	Width -> 0
+	},
+
+(******************************)
+
+S[4] == {
+	ClassName -> K0,
+	SelfConjugate -> False,
+	Mass -> {mK0, 498},
+	Width -> 0
+	},
+
+(******************************)
+
+-S[4] == {
+	ClassName -> K0bar,
+	SelfConjugate -> False,
+	Mass -> {mK0bar, 498},
+	Width -> 0
+	},
+
+(******************************)
+
+S[5] == {
+	ClassName -> eta,
+	SelfConjugate -> True,
+	Mass -> {meta, 548},
+	Width -> 0
+	},
+
+(******************************)
+
+S[1] == {
+	ClassName -> p,
+	SelfConjugate -> False,
+	Mass -> {mp, 938},
+	Width -> 0
+	},
+
+(******************************)
+
+S[2] == {
+	ClassName -> n,
+	SelfConjugate -> False,
+	Mass -> {mn, 940},
+	Width -> 0
+	},
+
+(******************************)
+
+S[3] == {
+	ClassName -> Lambda,
+	SelfConjugate -> False,
+	Mass -> {mLambda, 1115},
+	Width -> 0
+	},
+
+(******************************)
+
+S[4] == {
+	ClassName -> Sigmap,
+	SelfConjugate -> False,
+	Mass -> {mSigmap, 1189},
+	Width -> 0
+	},
+
+(******************************)
+
+S[5] == {
+	ClassName -> Sigma0,
+	SelfConjugate -> False,
+	Mass -> {mSigma0, 1193},
+	Width -> 0
+	},
+
+(******************************)
+
+S[6] == {
+	ClassName -> Sigmam,
+	SelfConjugate -> False,
+	Mass -> {mSigmam, 1197},
+	Width -> 0
+	},
+
+(******************************)
+
+S[7] == {
+	ClassName -> Xi0,
+	SelfConjugate -> False,
+	Mass -> {mXi0, 1315},
+	Width -> 0
+	},
+
+(******************************)
+
+S[8] == {
+	ClassName -> Xim,
+	SelfConjugate -> False,
+	Mass -> {mXim, 1321},
+	Width -> 0
+	}	};
+
+
+

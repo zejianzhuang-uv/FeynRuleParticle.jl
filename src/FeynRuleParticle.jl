@@ -1,5 +1,11 @@
 module FeynRuleParticle
 
-# Write your package code here.
+export write_field_info, write_params_info
+
+include("./FeynRule_info.jl")
+
+
+
+
 
 end
