@@ -33,18 +33,7 @@ function _field_info(particle)
     return t
 end
 
-function select_particle(name::AbstractString)
-    meson_names = ["pip", "pim", "pi0", "Kp", "Km", "K0", "K0bar", "eta"]
-    baryon_names = ["p", "n", "Lambda", "Sigmap", "Sigma0", "Sigmam", "Xi0", "Xim"]
-    
-    if name in meson_names
-        return meson_octet(name)
-    elseif name in baryon_names
-        return baryon_octet(name)
-    else
-        error("Unknown particle: $name")
-    end
-end
+
 
 function write_params_info(name_list::Vector{String}, tex_name_list::Vector{String}, file::String)
     open(file, "a+") do ff

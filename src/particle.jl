@@ -1,5 +1,20 @@
 
 
+
+function select_particle(name::AbstractString)
+    meson_names = ["pip", "pim", "pi0", "Kp", "Km", "K0", "K0bar", "eta"]
+    baryon_names = ["p", "n", "Lambda", "Sigmap", "Sigma0", "Sigmam", "Xi0", "Xim"]
+    
+    if name in meson_names
+        return meson_octet(name)
+    elseif name in baryon_names
+        return baryon_octet(name)
+    else
+        error("Unknown particle: $name")
+    end
+end
+
+
 function parse_quantum_number(s::AbstractString)
     parts = split(s, '/')
     length(parts) == 2 ? parse(Float64, parts[1]) / parse(Float64, parts[2]) : parse(Float64, s)
