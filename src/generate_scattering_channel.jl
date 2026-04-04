@@ -41,7 +41,7 @@ end
 
 
 
-function write_couple_channel(ls1, ls2, S, Q, path, name; iso=nothing, mode="w+")
+function write_couple_channel(ls1::AbstractVector{String}, ls2::AbstractVector{String}, S::Int64, Q::Int64, name::AbstractString, path::AbstractString; iso=nothing, mode="w+")
     sc = couple_channel(ls1, ls2, S, Q, iso=iso)
     open(path, mode) do f
         write(f, "$name=$sc\n")
