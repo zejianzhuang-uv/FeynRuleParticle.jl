@@ -1,0 +1,4 @@
+(* ::Package:: *)
+
+IsospinMesonMultiplet[SS_]:=Association[{pion->{S[1],S[2],-S[1]},kaon->{S[3],S[4],-S[4],-S[3]},eta->{S[5]}}][SS]
+IsospinBaryonMultiplet[SS_]:=Association[{N->{F[1],F[2]},Lambda->{F[3]},Sigma->{F[4],F[5],F[6]},Xi->{F[7],F[8]}}][SS]
