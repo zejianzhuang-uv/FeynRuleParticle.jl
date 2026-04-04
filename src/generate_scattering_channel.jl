@@ -46,4 +46,5 @@ function write_couple_channel(ls1::AbstractVector{String}, ls2::AbstractVector{S
     open(path, mode) do f
         write(f, "$name=$sc\n")
     end
+    return nothing
 end
