@@ -36,13 +36,20 @@ function couple_channel(ls1, ls2, S, Q; iso=nothing)
     end
     idx = sortperm(thre)
     ch = ch[idx]
-    return "{" * join(ch, ",") * "}"
+    return CoupleChannelResult(channel="{" * join(ch, ",") * "}")
+end
+
+@kwdef mutable struct CoupleChannelResult
+    channel::String = ""
+end
+
+function Base.show(io::IO, channel::CoupleChannelResult)
+    print(io, channel.channel)
 end
 
 
-
 function write_couple_channel(ls1::AbstractVector{String}, ls2::AbstractVector{String}, S::Int64, Q::Int64, name::AbstractString, path::AbstractString; iso=nothing, mode="w+", comment=nothing)
-    sc = couple_channel(ls1, ls2, S, Q, iso=iso)
+    sc = couple_channel(ls1, ls2, S, Q, iso=iso).channel
     open(path, mode) do f
         if !isnothing(comment)
             write(f, "(*$comment*)\n")
