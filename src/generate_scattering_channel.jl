@@ -65,7 +65,7 @@ function scattering_channel(ls1, ls2, S, Q; iso=nothing)
     end
     idx = sortperm(thre)
     ch = ch[idx]
-    return ScatteringChannelResult(channel="[" * join(ch, ",") * "]")
+    return ScatteringChannelResult(sc="[" * join(ch, ",") * "]")
 end
 
 
