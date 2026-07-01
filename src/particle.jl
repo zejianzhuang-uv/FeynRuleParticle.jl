@@ -103,6 +103,7 @@ function meson_octet(name::AbstractString)
 
     info = Dict{Symbol, String}(
         :name => name,
+        :msym => "m$name",
         :mass => m,
         :Y => Y,
         :Q => Q,
@@ -174,6 +175,7 @@ function baryon_octet(name::AbstractString)
 
     info = Dict{Symbol, String}(
         :name => name,
+        :msym => "m$name",
         :mass => m,
         :Y => Y,
         :Q => Q,
