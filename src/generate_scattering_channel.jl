@@ -44,7 +44,7 @@ end
 ISO_FAMILY = Dict(
     "mpi0" => "mpi", "mpip" => "mpi", "mpim" => "mpi",
     "mSigma0" => "mSigma", "mSigmap" => "mSigma", "mSigmam" => "mSigma",
-    "mKm" => "mK", "mK0bar" => "mK", "mK0" => "mK", "mKp" => "mK",
+    "mKm" => "mKbar", "mK0bar" => "mKbar", "mK0" => "mK", "mKp" => "mK",
     "mp" => "mN", "mn" => "mN",
     "meta" => "meta",
     "mLambda" => "mLambda",
