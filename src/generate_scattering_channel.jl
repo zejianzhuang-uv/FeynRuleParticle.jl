@@ -39,12 +39,51 @@ function couple_channel(ls1, ls2, S, Q; iso=nothing)
     return CoupleChannelResult(channel="{" * join(ch, ",") * "}")
 end
 
+function scattering_channel(ls1, ls2, S, Q; iso=nothing)
+    ch = String[]
+    thre = Float64[]
+    for i1 in ls1
+        p1 = select_particle(i1)
+        s1 = parse(Int64, p1[:S])
+        q1 = parse(Int64, p1[:Q])
+        I1 = parse_quantum_number(p1[:i])
+        m1 = parse(Float64, p1[:mass])
+        FA1 = p1[:msym]
+        for i2 in ls2
+            p2 = select_particle(i2)
+            s2 = parse(Int64, p2[:S])
+            q2 = parse(Int64, p2[:Q])
+            I2 = parse_quantum_number(p2[:i])
+            m2 = parse(Float64, p2[:mass])
+            FA2 = p2[:msym]
+            match = (S == s1 + s2 && Q == q1 + q2 && (isnothing(iso) || abs(I1 - I2) <= iso <= I1 + I2))
+            if match
+                push!(ch, "($FA1,$FA2)")
+                push!(thre, m1+m2)
+            end
+        end
+    end
+    idx = sortperm(thre)
+    ch = ch[idx]
+    return ScatteringChannelResult(channel="[" * join(ch, ",") * "]")
+end
+
+
+
 @kwdef mutable struct CoupleChannelResult
     channel::String = ""
 end
 
+@kwdef mutable struct ScatteringChannelResult
+    sc::String = ""
+end
+
 function Base.show(io::IO, channel::CoupleChannelResult)
     print(io, channel.channel)
+end
+
+function Base.show(io::IO, channel::ScatteringChannelResult)
+    print(io, channel.sc)
 end
 
 
