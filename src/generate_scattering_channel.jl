@@ -27,10 +27,14 @@ function couple_channel(ls1, ls2, S, Q; iso=nothing)
             I2 = parse_quantum_number(p2[:i])
             m2 = parse(Float64, p2[:mass])
             FA2 = p2[:FA_id]
-            match = (S == s1 + s2 && Q == q1 + q2 && (isnothing(iso) || abs(I1 - I2) <= iso <= I1 + I2))
+
+            iso_ok = isnothing(iso) ||
+                     (abs(I1 - I2) <= iso <= I1 + I2 && isinteger(I1 + I2 - iso))
+
+            match = (S == s1 + s2 && Q == q1 + q2 && iso_ok)
             if match
                 push!(ch, "{$FA1,$FA2}")
-                push!(thre, m1+m2)
+                push!(thre, m1 + m2)
             end
         end
     end
